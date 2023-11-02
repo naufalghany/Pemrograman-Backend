@@ -29,3 +29,20 @@ Route::put('animals/{id}', [AnimalController::class, "update"]);
 
 // Route untuk menghapus hewan
 Route::delete('animals/{id}', [AnimalController::class, "destroy"]);
+
+// Route untuk menampilkan semua siswa
+Route::get("students", [StudentController::class, "index"]);
+
+// pertemuan 5
+
+// method get
+Route::get('/students', [StudentController::class, "index"]);
+
+// method post
+Route::get('/students', [StudentController::class, "store"]);
+
+// method update
+Route::get('/students/{id}', [StudentController::class, "update"]);
+
+// method delete
+Route::get('/students/{id}', [StudentController::class, "destroy"]);
