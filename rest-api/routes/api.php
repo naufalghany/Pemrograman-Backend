@@ -39,10 +39,13 @@ Route::get("students", [StudentController::class, "index"]);
 Route::get('/students', [StudentController::class, "index"]);
 
 // method post
-Route::get('/students', [StudentController::class, "store"]);
+Route::post('/students', [StudentController::class, "store"]);
 
 // method update
-Route::get('/students/{id}', [StudentController::class, "update"]);
+Route::put('/students/{id}', [StudentController::class, "update"]);
 
 // method delete
-Route::get('/students/{id}', [StudentController::class, "destroy"]);
+Route::delete('/students/{id}', [StudentController::class, "destroy"]);
+
+// methode mendapatkan hasil
+Route::get('/students/{id}', [StudentController::class, "show"]);
