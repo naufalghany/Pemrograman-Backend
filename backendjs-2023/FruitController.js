@@ -1,20 +1,29 @@
-// import data
-const fruits = require('./data.js');
+//import data
+const fruits = require("./data.js");
 
-// menampilkan semua data
+//menampilkan semua data
 const index = () => {
-    for (const fruit of fruits) {
-        console.log(fruit);
-    }
-}
+  for (const fruit of fruits) {
+    console.log(fruit);
+  }
+};
 
-// menambahkan data
+//membuat method store
 const store = (name) => {
-    fruits.push(name)
+  fruits.push(name);
+  index();
+};
 
-    console.log(`menambahkan data ${name}`)
-    index()
-}
+//membuat method update
+const update = (position, name) => {
+  fruits[position] = name;
+  index();
+};
 
-// export method
-module.exports = {index, store}
+//membuat method delete
+const destroy = (position) => {
+  fruits.splice(position, 1);
+  index();
+};
+//export method
+module.exports = { index, store, update, destroy};
