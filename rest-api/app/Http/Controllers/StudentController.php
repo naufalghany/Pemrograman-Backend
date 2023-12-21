@@ -32,10 +32,11 @@ class StudentController extends Controller
 
     }
     public function store(Request $request) {
+
         // validasi data request
         $request->validate([
             "nama" => "required",
-            "nim" => "required",
+            "nim" => "required|numeric",
             "email" => "required|email",
             "jurusan" => "required"
         ]);
@@ -49,7 +50,7 @@ class StudentController extends Controller
         ];
 
         // menggunakan model Student untuk insert data
-        $student = Student::create($input);
+        $student = Student::create($validatedData);
 
         $data = [
             'message' => 'Student is creates ssuccesfully',
